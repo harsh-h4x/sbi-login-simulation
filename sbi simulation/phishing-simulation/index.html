@@ -1,0 +1,500 @@
+</style>
+<style>
+/* Responsive styles for small screens */
+@media (max-width: 600px) {
+  .gmail-main {
+    max-width: 100vw !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    display: block !important;
+  }
+  .gmail-header,
+  .gmail-sidebar,
+  .gmail-user,
+  .gmail-search-bar {
+    font-size: 15px !important;
+  }
+  .gmail-sidebar {
+    min-width: 100vw !important;
+    width: 100vw !important;
+    padding: 0 !important;
+    float: none !important;
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    background: #f5f5f5 !important;
+    border-bottom: 1px solid #e0e0e0 !important;
+  }
+  .gmail-menu {
+    display: flex !important;
+    flex-direction: row !important;
+    width: 100vw !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .gmail-menu li {
+    padding: 10px 12px !important;
+    font-size: 14px !important;
+    min-width: 80px !important;
+    text-align: center !important;
+    border-radius: 0 !important;
+    border-right: 1px solid #e0e0e0 !important;
+    background: none !important;
+  }
+  .gmail-menu li.active {
+    background: #e3f2fd !important;
+    color: #1a237e !important;
+  }
+  .inbox {
+    display: block !important;
+    width: 100vw !important;
+    min-width: 0 !important;
+  }
+  .email-list {
+    width: 100vw !important;
+    min-width: 0 !important;
+    border-bottom: 1px solid #e0e0e0 !important;
+    overflow-x: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    background: #f7f7f7 !important;
+  }
+  .email-item {
+    min-width: 220px !important;
+    max-width: 260px !important;
+    border-right: 1px solid #e0e0e0 !important;
+    padding: 10px 8px !important;
+    font-size: 13px !important;
+    cursor: pointer;
+    background: #fff !important;
+  }
+  .email-item.selected {
+    background: #e3f2fd !important;
+    color: #1a237e !important;
+  }
+  .email-view {
+    width: 100vw !important;
+    min-width: 0 !important;
+    padding: 0 2vw !important;
+    box-sizing: border-box !important;
+  }
+  .email-box {
+    font-size: 14px !important;
+    padding: 8px 2vw !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  #compare-modal > div {
+    flex-direction: column !important;
+    max-width: 98vw !important;
+    padding: 10px 2vw !important;
+  }
+  #compare-modal h4 {
+    font-size: 15px !important;
+  }
+  #mobile-toggle {
+    left: 10px !important;
+    right: auto !important;
+    top: 10px !important;
+  }
+  .gmail-title {
+    font-size: 18px !important;
+  }
+  .gmail-avatar {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  .gmail-user {
+    font-size: 13px !important;
+  }
+  .gmail-search-input {
+    font-size: 13px !important;
+    width: 120px !important;
+  }
+}
+
+/* Mobile view toggle styles (applies even on desktop if toggled) */
+body.mobile-view .gmail-main {
+  max-width: 100vw !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  display: block !important;
+}
+body.mobile-view .gmail-header,
+body.mobile-view .gmail-sidebar,
+body.mobile-view .gmail-user,
+body.mobile-view .gmail-search-bar {
+  font-size: 15px !important;
+}
+body.mobile-view .gmail-sidebar {
+  min-width: 100vw !important;
+  width: 100vw !important;
+  padding: 0 !important;
+  float: none !important;
+  display: flex !important;
+  flex-direction: row !important;
+  overflow-x: auto !important;
+  background: #f5f5f5 !important;
+  border-bottom: 1px solid #e0e0e0 !important;
+}
+body.mobile-view .gmail-menu {
+  display: flex !important;
+  flex-direction: row !important;
+  width: 100vw !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+body.mobile-view .gmail-menu li {
+  padding: 10px 12px !important;
+  font-size: 14px !important;
+  min-width: 80px !important;
+  text-align: center !important;
+  border-radius: 0 !important;
+  border-right: 1px solid #e0e0e0 !important;
+  background: none !important;
+}
+body.mobile-view .gmail-menu li.active {
+  background: #e3f2fd !important;
+  color: #1a237e !important;
+}
+body.mobile-view .inbox {
+  display: block !important;
+  width: 100vw !important;
+  min-width: 0 !important;
+}
+body.mobile-view .email-list {
+  width: 100vw !important;
+  min-width: 0 !important;
+  border-bottom: 1px solid #e0e0e0 !important;
+  overflow-x: auto !important;
+  display: flex !important;
+  flex-direction: row !important;
+  background: #f7f7f7 !important;
+}
+body.mobile-view .email-item {
+  min-width: 220px !important;
+  max-width: 260px !important;
+  border-right: 1px solid #e0e0e0 !important;
+  padding: 10px 8px !important;
+  font-size: 13px !important;
+  cursor: pointer;
+  background: #fff !important;
+}
+body.mobile-view .email-item.selected {
+  background: #e3f2fd !important;
+  color: #1a237e !important;
+}
+body.mobile-view .email-view {
+  width: 100vw !important;
+  min-width: 0 !important;
+  padding: 0 2vw !important;
+  box-sizing: border-box !important;
+}
+body.mobile-view .email-box {
+  font-size: 14px !important;
+  padding: 8px 2vw !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+body.mobile-view #compare-modal > div {
+  flex-direction: column !important;
+  max-width: 98vw !important;
+  padding: 10px 2vw !important;
+}
+body.mobile-view #compare-modal h4 {
+  font-size: 15px !important;
+}
+body.mobile-view #mobile-toggle {
+  left: 10px !important;
+  right: auto !important;
+  top: 10px !important;
+}
+body.mobile-view .gmail-title {
+  font-size: 18px !important;
+}
+body.mobile-view .gmail-avatar {
+  width: 28px !important;
+  height: 28px !important;
+}
+body.mobile-view .gmail-user {
+  font-size: 13px !important;
+}
+body.mobile-view .gmail-search-input {
+  font-size: 13px !important;
+  width: 120px !important;
+}
+</style>
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Simulation - Secure Login System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="mobile-toggle" style="position:fixed;top:12px;right:18px;z-index:1001;background:#fff;border:1.5px solid #1a237e;color:#1a237e;padding:7px 18px;border-radius:6px;font-weight:600;box-shadow:0 2px 8px #e3e3e3;cursor:pointer;">Switch to Mobile View</button>
+    <header class="gmail-header">
+        <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" alt="Gmail Logo" class="gmail-logo">
+        <span class="gmail-title">Gmail</span>
+        <span class="gmail-search-bar"><input type="text" placeholder="Search mail" class="gmail-search-input"></span>
+        <span class="gmail-user">user@gmail.com <img src="https://www.gstatic.com/images/branding/product/1x/avatar_square_blue_512dp.png" class="gmail-avatar" alt="User"></span>
+    </header>
+    <main>
+        <section id="phishing-email-section">
+            <div class="gmail-main">
+                <aside class="gmail-sidebar">
+                    <button class="gmail-compose">Compose</button>
+                    <ul class="gmail-menu">
+                        <li class="active">Inbox</li>
+                        <li>Starred</li>
+                        <li>Sent</li>
+                        <li>Drafts</li>
+                        <li>Spam</li>
+                        <li>Trash</li>
+                    </ul>
+                </aside>
+                <div class="inbox">
+                <div class="email-list">
+                    <div class="email-item selected" data-email="phishing">
+                        <span class="sender">support@onlinesbi.com</span>
+                        <span class="subject">Important: Unusual Login Attempt Detected</span>
+                        <span class="time">09:12 AM</span>
+                    </div>
+                    <div class="email-item" data-email="reset">
+                        <span class="sender">security@paypal.com</span>
+                        <span class="subject">Password Reset Request</span>
+                        <span class="time">08:59 AM</span>
+                    </div>
+                    <div class="email-item" data-email="invoice">
+                        <span class="sender">billing@cloudstorage.com</span>
+                        <span class="subject">Invoice Attached - Action Required</span>
+                        <span class="time">08:50 AM</span>
+                    </div>
+                    <div class="email-item" data-email="spear">
+                        <span class="sender">ceo@yourcompany.com</span>
+                        <span class="subject">Quick Request</span>
+                        <span class="time">08:47 AM</span>
+                    </div>
+                    <div class="email-item" data-email="bank">
+                        <span class="sender">no-reply@bank.com</span>
+                        <span class="subject">Your Statement is Ready</span>
+                        <span class="time">08:45 AM</span>
+                    </div>
+                    <div class="email-item" data-email="shopping">
+                        <span class="sender">newsletter@shopping.com</span>
+                        <span class="subject">Big Sale This Weekend!</span>
+                        <span class="time">Yesterday</span>
+                    </div>
+                    <div id="reset-email" class="email-box hidden">
+                        <div class="email-header">
+                            <span class="email-from highlight" title="Fake sender: not real PayPal">From: security@paypal.com</span><br>
+                            <span class="email-to">To: you@email.com</span><br>
+                            <span class="email-subject highlight" title="Password reset scam">Subject: Password Reset Request</span>
+                        </div>
+                        <div class="email-body">
+                            Dear Customer,<br><br>
+                            We received a request to reset your password. If this was not you, please <a href="#" class="highlight" title="Fake link">click here</a> to secure your account.<br><br>
+                            Regards,<br>
+                            PayPal Security Team
+                        </div>
+                    </div>
+                    <div id="invoice-email" class="email-box hidden">
+                        <div class="email-header">
+                            <span class="email-from highlight" title="Fake sender: not real CloudStorage">From: billing@cloudstorage.com</span><br>
+                            <span class="email-to">To: you@email.com</span><br>
+                            <span class="email-subject highlight" title="Fake invoice">Subject: Invoice Attached - Action Required</span>
+                        </div>
+                        <div class="email-body">
+                            Dear User,<br><br>
+                            Please see the attached invoice and make payment immediately to avoid service interruption.<br><br>
+                            Regards,<br>
+                            CloudStorage Billing
+                        </div>
+                    </div>
+                    <div id="spear-email" class="email-box hidden">
+                        <div class="email-header">
+                            <span class="email-from highlight" title="Impersonation">From: ceo@yourcompany.com</span><br>
+                            <span class="email-to">To: you@email.com</span><br>
+                            <span class="email-subject highlight" title="Spear phishing">Subject: Quick Request</span>
+                        </div>
+                        <div class="email-body">
+                            Hi,<br><br>
+                            I need you to purchase $500 in gift cards and send me the codes ASAP. I can't talk right now, just reply to this email.<br><br>
+                            Thanks,<br>
+                            CEO
+                        </div>
+                    </div>
+                </div>
+                <div class="email-view">
+                    <div id="phishing-email" class="email-box" style="font-family:'Segoe UI',Arial,sans-serif; border:1.5px solid #d1d5db; border-radius:8px; box-shadow:0 2px 8px #e3e3e3;">
+                        <button id="compare-legit-btn" style="float:right; margin:8px 0 0 0; background:#fff; color:#1a237e; border:1px solid #1a237e; border-radius:4px; padding:4px 12px; font-size:13px; font-weight:600; cursor:pointer;">Compare with Legitimate Email</button>
+                        <div class="email-header" style="display:flex; align-items:center; gap:12px; padding-bottom:2px;">
+                            <img src="sbi-logo.png" alt="SBI Logo" style="width:38px; height:38px; border-radius:6px; background:#fff; border:1px solid #e0e0e0;">
+                            <span style="font-size:1.13rem; color:#1a237e; font-weight:600; letter-spacing:0.01em;">State Bank of India</span>
+                        </div>
+                        <div class="email-header" style="margin-top:4px; margin-bottom:2px; font-size:14.2px; color:#222;">
+                            <span class="email-from" style="color:#222;">support@onlinesbi.com</span><br>
+                            <span class="email-to">To: you@email.com</span><br>
+                            <span class="email-subject" style="font-weight:500; color:#1a237e;">Important: Unusual Login Attempt Detected</span>
+                        </div>
+                        <div class="email-body" style="margin-top:10px; font-size:15.1px; color:#222; line-height:1.7;">
+                            <p style="margin:0 0 16px 0;">Dear Customer,</p>
+                            <p style="margin:0 0 16px 0;">We have detected an unusual login attempt to your State Bank of India account from a new device. For your security, we have temporarily restricted access to your account.</p>
+                            <div style="margin:0 0 16px 0;">
+                                <a href="#" id="phishing-link" style="display:inline-block; background:#1a237e; color:#fff; text-decoration:none; padding:10px 22px; border-radius:5px; font-weight:600; font-size:15px; box-shadow:0 1px 4px #e3e3e3;">View Details</a>
+                            </div>
+                            <div style="background:#f1f8e9; border:1px solid #c5e1a5; border-radius:5px; padding:10px 14px; margin:18px 0; color:#33691e; font-size:14px;">
+                                <b>Security Tip:</b> State Bank of India never asks for your password or OTP via email. If you did not attempt to log in, please contact us immediately.
+                            </div>
+                            <p style="margin-bottom:0;">Thank you,<br>
+                            <b>State Bank of India Online Banking Team</b></p>
+                            <div style="border-top:1px solid #e0e0e0; margin-top:18px; padding-top:10px; color:#888; font-size:13px;">
+                                <b>Disclaimer:</b> This is a system-generated email. Please do not reply to this email.<br>
+                                &copy; 2025 State Bank of India. All rights reserved.
+                            </div>
+                        </div>
+                    </div>
+                    <div id="bank-email" class="email-box hidden">
+                        <div class="email-header">
+                            <span class="email-from">From: no-reply@bank.com</span><br>
+                            <span class="email-to">To: you@email.com</span><br>
+                            <span class="email-subject">Subject: Your Statement is Ready</span>
+                        </div>
+                        <div class="email-body">
+                            Dear Customer,<br><br>
+                            Your monthly statement is now available. Please log in to your account to view your statement.<br><br>
+                            Regards,<br>
+                            Your Trusted Bank
+                        </div>
+                    </div>
+                    <div id="shopping-email" class="email-box hidden">
+                        <div class="email-header">
+                            <span class="email-from">From: newsletter@shopping.com</span><br>
+                            <span class="email-to">To: you@email.com</span><br>
+                            <span class="email-subject">Subject: Big Sale This Weekend!</span>
+                        </div>
+                        <div class="email-body">
+                            Hi Shopper!<br><br>
+                            Don't miss our big sale this weekend. Up to 50% off on selected items.<br><br>
+                            Happy Shopping!<br>
+                            Shopping.com Team
+                        </div>
+                    </div>
+                    <div class="phishing-actions">
+                    </div>
+                    <div id="compare-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.18); z-index:1002; align-items:center; justify-content:center;">
+                        <div style="background:#fff; border-radius:10px; box-shadow:0 2px 12px rgba(44,62,80,0.18); padding:32px 38px; max-width:900px; margin:auto; text-align:left; display:flex; gap:32px;">
+                            <div style="flex:1; min-width:320px;">
+                                <h4 style="color:#c0392b; margin-bottom:8px;">Phishing Email</h4>
+                                <div id="phishing-email-clone"></div>
+                            </div>
+                            <div style="flex:1; min-width:320px;">
+                                <h4 style="color:#1a237e; margin-bottom:8px;">Legitimate SBI Email</h4>
+                                <div style="font-family:'Segoe UI',Arial,sans-serif; border:1.5px solid #d1d5db; border-radius:8px; box-shadow:0 2px 8px #e3e3e3; padding:18px 18px 10px 18px;">
+                                    <div style="display:flex; align-items:center; gap:12px; padding-bottom:2px;">
+                                        <img src="sbi-logo.png" alt="SBI Logo" style="width:38px; height:38px; border-radius:6px; background:#fff; border:1px solid #e0e0e0;">
+                                        <span style="font-size:1.13rem; color:#1a237e; font-weight:600; letter-spacing:0.01em;">State Bank of India</span>
+                                    </div>
+                                    <div style="margin-top:4px; margin-bottom:2px; font-size:14.2px; color:#222;">
+                                        <span style="color:#222;">noreply@onlinesbi.com</span><br>
+                                        <span>To: you@email.com</span><br>
+                                        <span style="font-weight:500; color:#1a237e;">Account Statement Available</span>
+                                    </div>
+                                    <div style="margin-top:10px; font-size:15.1px; color:#222; line-height:1.7;">
+                                        <p style="margin:0 0 16px 0;">Dear Customer,</p>
+                                        <p style="margin:0 0 16px 0;">Your monthly account statement is now available. Please log in to your SBI Internet Banking account to view your statement securely.</p>
+                                        <div style="margin:0 0 16px 0;">
+                                            <a href="#" style="display:inline-block; background:#1a237e; color:#fff; text-decoration:none; padding:10px 22px; border-radius:5px; font-weight:600; font-size:15px; box-shadow:0 1px 4px #e3e3e3;">Login to SBI</a>
+                                        </div>
+                                        <div style="background:#f1f8e9; border:1px solid #c5e1a5; border-radius:5px; padding:10px 14px; margin:18px 0; color:#33691e; font-size:14px;">
+                                            <b>Security Tip:</b> State Bank of India never asks for your password or OTP via email. If you did not attempt to log in, please contact us immediately.
+                                        </div>
+                                        <p style="margin-bottom:0;">Thank you,<br>
+                                        <b>State Bank of India Online Banking Team</b></p>
+                                        <div style="border-top:1px solid #e0e0e0; margin-top:18px; padding-top:10px; color:#888; font-size:13px;">
+                                            <b>Disclaimer:</b> This is a system-generated email. Please do not reply to this email.<br>
+                                            &copy; 2025 State Bank of India. All rights reserved.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button onclick="document.getElementById('compare-modal').style.display='none'" style="position:absolute;top:18px;right:24px;background:#fff;color:#1a237e;border:1px solid #1a237e;border-radius:50%;width:32px;height:32px;font-size:18px;cursor:pointer;">&times;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div id="quiz-section" class="hidden">
+            <h2>Phishing Awareness Quiz</h2>
+            <div class="quiz-question">
+                <p><strong>Which of the following is a sign of a phishing email?</strong></p>
+                <form id="quiz-form">
+                    <label><input type="checkbox" name="q1" value="1"> Suspicious sender address</label><br>
+                    <label><input type="checkbox" name="q1" value="2"> Personalized greeting with your full name</label><br>
+                    <label><input type="checkbox" name="q1" value="3"> Urgent or threatening language</label><br>
+                    <label><input type="checkbox" name="q1" value="4"> Unexpected attachments</label><br>
+                    <button type="submit">Submit</button>
+                </form>
+                <div id="quiz-feedback"></div>
+            </div>
+            <div id="quiz-complete" style="display:none; margin-top:18px; color:#1a237e; font-weight:600;">Quiz complete! You are now more aware of phishing attacks.</div>
+        </div>
+        </section>
+        <section id="login-section" class="hidden">
+            <div class="sbi-login-container">
+                <img src="sbi-logo.png" alt="SBI Logo" class="sbi-logo">
+                <h2 class="sbi-title">State Bank of India - Online Banking</h2>
+                <div class="fake-login-warning">Warning: This is a fake login page designed to steal your credentials!</div>
+                <form id="login-form" class="sbi-login-form">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required autocomplete="off">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required autocomplete="off">
+                    <button type="submit" class="sbi-login-btn">Login</button>
+                </form>
+                <div id="login-feedback"></div>
+                <div class="sbi-login-footer">
+                    <a href="#" class="sbi-link">Forgot Username / Password?</a> |
+                    <a href="#" class="sbi-link">New User? Register Here</a>
+                </div>
+            </div>
+        </section>
+        <section id="safe-login-section">
+        <!-- Safe Login Page removed for realism -->
+    </main>
+    <footer>
+        <button id="reset-btn" style="margin-bottom:10px;">Replay Attack</button>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+    // Mobile View Toggle
+    const mobileToggle = document.getElementById('mobile-toggle');
+    let mobileMode = false;
+    mobileToggle.addEventListener('click', function() {
+        mobileMode = !mobileMode;
+        document.body.classList.toggle('mobile-view', mobileMode);
+        mobileToggle.textContent = mobileMode ? 'Switch to Desktop View' : 'Switch to Mobile View';
+    });
+    // Compare with Legitimate Email
+    const compareBtn = document.getElementById('compare-legit-btn');
+    if (compareBtn) {
+        compareBtn.addEventListener('click', function() {
+            const modal = document.getElementById('compare-modal');
+            const clone = document.getElementById('phishing-email').cloneNode(true);
+            clone.style.pointerEvents = 'none';
+            clone.style.opacity = '0.95';
+            clone.style.boxShadow = 'none';
+            clone.querySelector('#compare-legit-btn').style.display = 'none';
+            document.getElementById('phishing-email-clone').innerHTML = '';
+            document.getElementById('phishing-email-clone').appendChild(clone);
+            modal.style.display = 'flex';
+        });
+    }
+    </script>
+</body>
+</html>

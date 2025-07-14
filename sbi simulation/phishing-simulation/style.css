@@ -1,0 +1,348 @@
+/* Gmail Simulation Styles */
+.gmail-header {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 0 24px;
+    height: 64px;
+    box-shadow: 0 1px 4px rgba(60,64,67,0.04);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+.gmail-logo {
+    width: 38px;
+    margin-right: 18px;
+}
+.gmail-title {
+    font-size: 1.7rem;
+    color: #d93025;
+    font-family: 'Product Sans', Arial, sans-serif;
+    font-weight: 700;
+    margin-right: 32px;
+}
+.gmail-search-bar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+.gmail-search-input {
+    width: 420px;
+    padding: 8px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 24px;
+    font-size: 15px;
+    background: #f1f3f4;
+    outline: none;
+}
+.gmail-user {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: #444;
+    margin-left: 24px;
+}
+.gmail-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+.gmail-main {
+    display: flex;
+    min-height: 600px;
+    background: #f6f8fc;
+}
+.gmail-sidebar {
+    width: 220px;
+    background: #fff;
+    border-right: 1px solid #e0e0e0;
+    padding: 24px 0 0 0;
+    min-height: 600px;
+}
+.gmail-compose {
+    background: #c2e7ff;
+    color: #1967d2;
+    border: none;
+    border-radius: 24px;
+    padding: 12px 0;
+    width: 80%;
+    margin: 0 10% 24px 10%;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.gmail-compose:hover {
+    background: #b3e5fc;
+}
+.gmail-menu {
+    list-style: none;
+    padding: 0 0 0 24px;
+    margin: 0;
+}
+.gmail-menu li {
+    padding: 10px 0;
+    color: #444;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 0 24px 24px 0;
+    transition: background 0.2s, color 0.2s;
+}
+.gmail-menu li.active, .gmail-menu li:hover {
+    background: #e8f0fe;
+    color: #1967d2;
+}
+.inbox {
+    flex: 1;
+    margin: 0;
+    background: #f6f8fc;
+    padding: 0 0 0 0;
+    min-height: 600px;
+}
+/* SBI Login Styles */
+.sbi-login-container {
+    max-width: 370px;
+    margin: 40px auto 0 auto;
+    background: #f7fafd;
+    border: 1px solid #dbe6f3;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(44,62,80,0.10);
+    padding: 32px 30px 18px 30px;
+    text-align: center;
+}
+.sbi-logo {
+    width: 90px;
+    margin-bottom: 10px;
+}
+.sbi-title {
+    color: #1a237e;
+    font-size: 1.2rem;
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+.sbi-login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+.sbi-login-form label {
+    text-align: left;
+    color: #1a237e;
+    font-size: 15px;
+    font-weight: 500;
+}
+.sbi-login-form input {
+    padding: 8px 10px;
+    border: 1px solid #b0bec5;
+    border-radius: 4px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 2px;
+}
+.sbi-login-btn {
+    background: #1a237e;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.2s;
+}
+.sbi-login-btn:hover {
+    background: #3949ab;
+}
+.sbi-login-footer {
+    margin-top: 10px;
+    font-size: 14px;
+}
+.sbi-link {
+    color: #1a237e;
+    text-decoration: none;
+    margin: 0 2px;
+}
+.sbi-link:hover {
+    text-decoration: underline;
+}
+.highlight {
+    background: #fff3cd;
+    border-bottom: 2px dashed #f1c40f;
+    cursor: help;
+    transition: background 0.2s;
+}
+.highlight:hover {
+    background: #ffe082;
+}
+.quiz-question {
+    background: #f7fafd;
+    border: 1px solid #dbe6f3;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 20px 0;
+    box-shadow: 0 1px 4px rgba(44,62,80,0.04);
+}
+#quiz-feedback {
+    margin-top: 10px;
+    font-weight: bold;
+}
+#reset-btn {
+    background: #2d3e50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 18px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transition: background 0.2s;
+}
+#reset-btn:hover {
+    background: #4e5d6c;
+}
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #e9eef6;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background: linear-gradient(90deg, #2d3e50 60%, #4e5d6c 100%);
+    color: #fff;
+    padding: 30px 0 18px 0;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 35px 40px 40px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(44,62,80,0.10);
+}
+.inbox {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+.email-list {
+    width: 260px;
+    background: #f7fafd;
+    border: 1px solid #dbe6f3;
+    border-radius: 8px;
+    padding: 0;
+    box-shadow: 0 1px 4px rgba(44,62,80,0.04);
+}
+.email-item {
+    padding: 16px 18px;
+    border-bottom: 1px solid #e3e9f2;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    transition: background 0.2s;
+}
+.email-item.selected, .email-item:hover {
+    background: #eaf3ff;
+}
+.email-item .sender {
+    font-weight: 600;
+    color: #2d3e50;
+}
+.email-item .subject {
+    font-size: 15px;
+    color: #3a4a5d;
+}
+.email-item .time {
+    font-size: 12px;
+    color: #8a99a8;
+    align-self: flex-end;
+}
+.email-view {
+    flex: 1;
+    min-width: 0;
+}
+.email-box {
+    border: 1px solid #e74c3c;
+    background: #fff0f0;
+    padding: 18px 22px;
+    border-radius: 7px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(231,76,60,0.04);
+}
+.email-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #c0392b;
+}
+.email-from, .email-to, .email-subject {
+    display: block;
+    margin-bottom: 2px;
+}
+.email-body {
+    color: #2d3e50;
+    font-size: 16px;
+    margin-top: 10px;
+}
+.phishing-actions {
+    margin-bottom: 10px;
+}
+#phishing-signs-list {
+    margin-top: 10px;
+    background: #f9f9c5;
+    border: 1px solid #f1c40f;
+    border-radius: 5px;
+    padding: 12px 18px;
+    font-size: 15px;
+    box-shadow: 0 1px 4px rgba(241,196,15,0.04);
+}
+#phishing-signs-list li {
+    margin-bottom: 7px;
+}
+.hidden {
+    display: none;
+}
+#login-section, #safe-login-section {
+    margin-top: 40px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #f7fafd;
+    border: 1px solid #dbe6f3;
+    border-radius: 8px;
+    padding: 28px 30px 22px 30px;
+    box-shadow: 0 1px 4px rgba(44,62,80,0.04);
+}
+#login-section h2, #safe-login-section h2 {
+    margin-top: 0;
+}
+#login-form, #safe-login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 350px;
+}
+#login-feedback, #safe-login-feedback {
+    margin-top: 12px;
+    font-weight: bold;
+}
+.fake-login-warning {
+    background: #fff0f0;
+    color: #c0392b;
+    border: 1px solid #e74c3c;
+    border-radius: 5px;
+    padding: 8px 12px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    text-align: center;
+}
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #888;
+}

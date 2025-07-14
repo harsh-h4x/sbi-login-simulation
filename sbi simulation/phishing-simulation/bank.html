@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Account - Simulation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background:#e9eef6;">
+    <header style="background:#1a237e; color:#fff; padding:18px 0; text-align:center;">
+        <a href="index.html"><img src="sbi-logo.png" alt="SBI Logo" style="width:70px; vertical-align:middle; margin-right:10px;"></a>
+        <span style="font-size:1.3rem; font-weight:600; vertical-align:middle;">State Bank of India - Online Banking</span>
+        <button onclick="window.location.href='index.html'" style="float:right; margin-right:40px; background:#fff; color:#1a237e; border:none; border-radius:4px; padding:7px 18px; font-weight:600; font-size:15px; cursor:pointer;">Logout</button>
+    </header>
+    <main>
+        <div class="sbi-dashboard-container" style="display:flex;">
+            <aside style="width:180px; margin-right:32px;">
+                <nav style="background:#f7fafd; border-radius:8px; padding:18px 0; box-shadow:0 1px 4px #e3e3e3;">
+                    <ul style="list-style:none; padding:0; margin:0;">
+                        <li id="tab-accounts" class="tab active" style="padding:12px 24px; color:#1a237e; font-weight:600; background:#e3f2fd; border-radius:6px; cursor:pointer;">Accounts</li>
+                        <li id="tab-transfer" class="tab" style="padding:12px 24px; color:#333; cursor:pointer;">Fund Transfer</li>
+                        <li id="tab-bill" class="tab" style="padding:12px 24px; color:#333; cursor:pointer;">Bill Payments</li>
+                        <li id="tab-cards" class="tab" style="padding:12px 24px; color:#333; cursor:pointer;">Cards</li>
+                        <li id="tab-profile" class="tab" style="padding:12px 24px; color:#333; cursor:pointer;">Profile</li>
+                        <li id="tab-support" class="tab" style="padding:12px 24px; color:#333; cursor:pointer;">Support</li>
+                    </ul>
+                </nav>
+            </aside>
+            <section style="flex:1;">
+                <div id="tab-accounts-content">
+                <h2 class="sbi-dashboard-title">Account Summary</h2>
+                <!-- ...existing code... -->
+                <div class="sbi-account-info">
+                    <div><strong>Account Holder:</strong> John Doe</div>
+                    <div><strong>Account Number:</strong> 1234567890</div>
+                    <div><strong>Branch:</strong> Mumbai Main</div>
+                </div>
+                <div class="sbi-balance-box">
+                    <span>Available Balance</span>
+                    <span class="sbi-balance">₹5,00,000.00</span>
+                </div>
+                <h3 style="margin-top:30px;">Recent Transactions</h3>
+                <table class="sbi-trans-table">
+                    <tr><th>Date</th><th>Description</th><th>Amount</th><th>Balance</th></tr>
+                    <tr><td>04-Jul-2025</td><td>ATM Withdrawal</td><td>-₹5,000.00</td><td>₹5,00,000.00</td></tr>
+                    <tr><td>03-Jul-2025</td><td>Salary Credit</td><td>+₹50,000.00</td><td>₹5,05,000.00</td></tr>
+                    <tr><td>01-Jul-2025</td><td>Online Shopping</td><td>-₹2,000.00</td><td>₹4,55,000.00</td></tr>
+                </table>
+                <div id="stolen-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.25); z-index:1000; align-items:center; justify-content:center;">
+                    <div style="background:#fff; border-radius:10px; box-shadow:0 2px 12px rgba(44,62,80,0.18); padding:32px 38px; max-width:400px; margin:auto; text-align:center;">
+                        <h3 style="color:#c0392b;">Security Alert</h3>
+                        <p style="color:#333;">Your login credentials and OTP have been captured. This is how attackers can access your bank account after a phishing attack.</p>
+                        <div class="stolen-details" style="margin:12px 0 18px 0; color:#c0392b; font-weight:600;"></div>
+                        <button onclick="closeStolenModal()" class="sbi-login-btn" style="width:100%;">Close</button>
+                        <div style="margin-top:18px; font-size:13px; color:#888; text-align:left;">
+                            <b>How hackers bypass OTPs:</b><br>
+                            <ul style="margin:8px 0 0 18px; padding:0; color:#444;">
+                                <li>Malware on your phone or computer can intercept OTPs.</li>
+                                <li>SIM swap attacks allow hackers to receive your SMS OTPs.</li>
+                                <li>Phishing sites may ask you to enter OTPs, then use them instantly.</li>
+                                <li>Social engineering: tricking you into sharing OTPs over calls.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                function getQueryParam(param) {
+                    const urlParams = new URLSearchParams(window.location.search);
+                    return urlParams.get(param);
+                }
+                function showStolenModal() {
+                    const modal = document.getElementById('stolen-modal');
+                    const details = modal.querySelector('.stolen-details');
+                    const user = getQueryParam('user') || 'unknown';
+                    const pass = getQueryParam('pass') || 'unknown';
+                    const otp = getQueryParam('otp') || 'unknown';
+                    details.innerHTML = `<div>Username: <b>${user}</b></div><div>Password: <b>${pass}</b></div><div>OTP: <b>${otp}</b></div>`;
+                    modal.style.display = 'flex';
+                }
+                function closeStolenModal() {
+                    document.getElementById('stolen-modal').style.display = 'none';
+                }
+                window.onload = function() {
+                    // Show modal automatically if stolen=1 in query
+                    if (getQueryParam('stolen')) {
+                        showStolenModal();
+                    }
+                }
+                </script>
+                <button onclick="showStolenModal()" class="sbi-login-btn" style="margin-top:24px; width:100%;">Show Security Alert</button>
+                </div>
+                <div id="tab-transfer-content" style="display:none;">
+                    <h2 class="sbi-dashboard-title">Fund Transfer</h2>
+                    <form style="max-width:400px;margin:0 auto;">
+                        <label>Beneficiary Account Number</label><br>
+                        <input type="text" style="width:100%;padding:8px;margin-bottom:10px;border:1px solid #b0bec5;border-radius:4px;">
+                        <label>IFSC Code</label><br>
+                        <input type="text" style="width:100%;padding:8px;margin-bottom:10px;border:1px solid #b0bec5;border-radius:4px;">
+                        <label>Amount (INR)</label><br>
+                        <input type="number" style="width:100%;padding:8px;margin-bottom:10px;border:1px solid #b0bec5;border-radius:4px;">
+                        <button type="button" class="sbi-login-btn" style="width:100%;margin-top:10px;">Transfer</button>
+                    </form>
+                </div>
+                <div id="tab-bill-content" style="display:none;">
+                    <h2 class="sbi-dashboard-title">Bill Payments</h2>
+                    <form style="max-width:400px;margin:0 auto;">
+                        <label>Biller Name</label><br>
+                        <input type="text" style="width:100%;padding:8px;margin-bottom:10px;border:1px solid #b0bec5;border-radius:4px;">
+                        <label>Amount (INR)</label><br>
+                        <input type="number" style="width:100%;padding:8px;margin-bottom:10px;border:1px solid #b0bec5;border-radius:4px;">
+                        <button type="button" class="sbi-login-btn" style="width:100%;margin-top:10px;">Pay Bill</button>
+                    </form>
+                </div>
+                <div id="tab-cards-content" style="display:none;">
+                    <h2 class="sbi-dashboard-title">Cards</h2>
+                    <table class="sbi-trans-table" style="margin-bottom:20px;">
+                        <tr><th>Card Number</th><th>Type</th><th>Status</th></tr>
+                        <tr><td>XXXX-XXXX-XXXX-1234</td><td>Debit</td><td>Active</td></tr>
+                        <tr><td>XXXX-XXXX-XXXX-5678</td><td>Credit</td><td>Blocked</td></tr>
+                    </table>
+                </div>
+                <div id="tab-profile-content" style="display:none;">
+                    <h2 class="sbi-dashboard-title">Profile</h2>
+                    <div style="max-width:400px;margin:0 auto;">
+                        <div><b>Name:</b> John Doe</div>
+                        <div><b>Email:</b> johndoe@email.com</div>
+                        <div><b>Mobile:</b> +91-9876543210</div>
+                        <div><b>Address:</b> Mumbai, India</div>
+                    </div>
+                </div>
+                <div id="tab-support-content" style="display:none;">
+                    <h2 class="sbi-dashboard-title">Support</h2>
+                    <div style="max-width:400px;margin:0 auto;">
+                        <p>For assistance, call 1800 11 2211 or visit your nearest branch.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer style="text-align:center; margin-top:40px; color:#888;">
+        <!-- No simulation/fake text -->
+    <script>
+    // Tab switching logic
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', function() {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            const tabs = ['accounts','transfer','bill','cards','profile','support'];
+            tabs.forEach(t => {
+                document.getElementById('tab-' + t + '-content').style.display = 'none';
+            });
+            document.getElementById('tab-' + this.id.split('-')[1] + '-content').style.display = 'block';
+        });
+    });
+    </script>
+    </footer>
+    <script>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+        function showStolen() {
+            const warning = document.getElementById('stolen-warning');
+            const details = document.querySelector('.stolen-details');
+            const user = getQueryParam('user') || 'unknown';
+            const pass = getQueryParam('pass') || 'unknown';
+            details.innerHTML = `<strong>Stolen Username:</strong> ${user}<br><strong>Stolen Password:</strong> ${pass}`;
+            warning.classList.remove('hidden');
+        }
+    </script>
+    <style>
+    .sbi-dashboard-container {
+        max-width: 600px;
+        margin: 40px auto 0 auto;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 12px rgba(44,62,80,0.10);
+        padding: 32px 30px 18px 30px;
+    }
+    .sbi-dashboard-title {
+        color: #1a237e;
+        font-size: 1.2rem;
+        margin-bottom: 18px;
+        font-weight: 600;
+        text-align:center;
+    }
+    .sbi-account-info {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 18px;
+        font-size: 15px;
+    }
+    .sbi-balance-box {
+        background: #e3f2fd;
+        border: 1px solid #90caf9;
+        border-radius: 7px;
+        padding: 18px 22px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+        font-weight: 600;
+        color: #1a237e;
+        margin-bottom: 18px;
+    }
+    .sbi-balance { color: #388e3c; }
+    .sbi-trans-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 10px;
+    }
+    .sbi-trans-table th, .sbi-trans-table td {
+        border: 1px solid #b0bec5;
+        padding: 8px 10px;
+        text-align: left;
+        font-size: 15px;
+    }
+    .sbi-trans-table th {
+        background: #e3f2fd;
+        color: #1a237e;
+    }
+    .sbi-trans-table td {
+        background: #f7fafd;
+    }
+    .sbi-login-btn {
+        background: #1a237e;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 0;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        margin-top: 8px;
+        transition: background 0.2s;
+        width: 220px;
+    }
+    .sbi-login-btn:hover {
+        background: #3949ab;
+    }
+    .stolen-warning {
+        background: #fff0f0;
+        color: #c0392b;
+        border: 1px solid #e74c3c;
+        border-radius: 5px;
+        padding: 12px 18px;
+        font-size: 15px;
+        text-align: center;
+    }
+    </style>
+</body>
+</html>

